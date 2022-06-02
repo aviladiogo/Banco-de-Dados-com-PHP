@@ -6,7 +6,7 @@
 
 <body>
 
-<table width="300" border="1" cellspacing="2" cellpadding="5">
+<table width="300" border="1" cellspacing="2" cellpadding="5" align=center>
   <tr>
     <td><a href="./cliente.php"><input type="submit" value="Cliente"></a></td>
   </tr>

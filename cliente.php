@@ -14,9 +14,9 @@ if(isset($_GET['message']) ){
 <body>
 
 <form action="clienteRegister.php" method="post">
-<table width="600" border="0" cellspacing="1" cellpadding="1">
+<table width="600" border="0" cellspacing="1" cellpadding="1" align=center>
   <tr>
-  <td><a href="./inicial.php">Voltar</a></td>
+  <td ><a href="./inicial.php">Voltar</a></td>
   </tr>
   <tr>
     <td>CPF:</td>
