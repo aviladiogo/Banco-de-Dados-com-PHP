@@ -8,7 +8,7 @@ if(isset($_GET['message']) ){
 <!DOCTYPE html>
 <html>
 <head>
-    <title> PHP - MySQL Lesson </title>
+    <title>Cadastro Cliente</title>
 </head>
 
 <body>

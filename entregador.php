@@ -8,7 +8,7 @@ if(isset($_GET['message']) ){
 <!DOCTYPE html>
 <html>
 <head>
-    <title> PHP - Register </title>
+    <title>Cadastro Entregador</title>
 </head>
 
 <body>
