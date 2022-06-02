@@ -13,7 +13,7 @@ if(isset($_GET['message']) ){
 
 <body>
 
-<form action="register.php" method="post">
+<form action="clienteRegister.php" method="post">
 <table width="600" border="0" cellspacing="1" cellpadding="1">
   <tr>
   <td><a href="./inicial.php">Voltar</a></td>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> PHP - MySQL Inicial </title>
+    <title> Cadastros </title>
 </head>
 
 <body>
@@ -11,10 +11,13 @@
     <td><a href="./cliente.php"><input type="submit" value="Cliente"></a></td>
   </tr>
   <tr>
-  <td><a href="usuarios/restaurante.php"><input type="submit" value="Restaurante"></a></td>
+  <td><a href="./restaurante.php"><input type="submit" value="Restaurante"></a></td>
   </tr>
   <tr>
-  <td><a href="usuarios/entregador.php"><input type="submit" value="Entregador"></a></td>
+  <td><a href="./entregador.php"><input type="submit" value="Entregador"></a></td>
+  </tr>
+  <tr>
+  <td><a href="./pedido.php"><input type="submit" value="Fazer pedido"></a></td>
   </tr>
 
 </table>
