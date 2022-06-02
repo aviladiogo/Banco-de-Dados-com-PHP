@@ -35,16 +35,8 @@ if(isset($_GET['message']) ){
     <td><input type="text" name="adress"></td>
   </tr>
   <tr>
-    <td>Pedido:</td>
-    <td><input type="text" name="order"></td>
-  </tr>
-  <tr>
     <td>Metodo de pagamento (1- dinheiro, 2- cartão, 3- pix):</td>
     <td><input type="int" name="payment"></td>
-  </tr>
-  <tr>
-    <td>codigo do pedido:</td>
-    <td><input type="int" name="deliveryid"></td>
   </tr>
   <tr>
     <td>&nbsp;</td>

@@ -4,9 +4,7 @@ $CPF = val($_POST["cpf"]);
 $fname = val($_POST["fname"]);  
 $lname = val($_POST["lname"]);  
 $adress = val($_POST["adress"]);
-$order = val($_POST["order"]);
 $payment = val($_POST["payment"]);  
-$deliveryid = val($_POST["deliveryid"]);    
 
 function val($data) {
 	$data = trim($data);
@@ -29,8 +27,8 @@ if ($conn->connect_error) {
 
 
 
-$sql = "INSERT INTO users (CPF, firstname, lastname, ordered, payment, adress, deliveryid)
-VALUES ('$CPF','$fname', '$lname','$order','$payment','$adress', '$deliveryid')";
+$sql = "INSERT INTO users (CPF, firstname, lastname, payment, adress)
+VALUES ('$CPF','$fname', '$lname','$payment','$adress')";
 
 if ($conn->query($sql) === TRUE) {
     header("location:cliente.php?message=inserido");
