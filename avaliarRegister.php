@@ -31,7 +31,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-$sql = "UPDATE entregador SET idprato = '0' WHERE ID = idEntregador";
+$sql = "UPDATE entregador SET idpedido = '0' WHERE ID = idEntregador";
 if ($conn->query($sql) === TRUE) {
     echo "...Pedido apagado";
     //header("location:cliente.php?message=inserido");
