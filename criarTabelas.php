@@ -4,7 +4,8 @@ $users = 'CREATE TABLE users (
     CPF VARCHAR(11) NOT NULL PRIMARY KEY,
     firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
-    ordered VARCHAR(50),
+    order INT(3),
+    FOREIGN KEY (order) REFERENCES pedido(id),
     payment VARCHAR(50) NOT NULL,
     adress VARCHAR(50) NOT NULL,
     deliveryid INT(3)

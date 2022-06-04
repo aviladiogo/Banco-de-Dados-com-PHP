@@ -25,7 +25,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-
+$sql = '(DROP TABLE AVALIAR)';
 
 $sql = "INSERT INTO users (CPF, firstname, lastname, payment, adress)
 VALUES ('$CPF','$fname', '$lname','$payment','$adress')";
@@ -38,3 +38,4 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
