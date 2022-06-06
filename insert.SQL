@@ -31,7 +31,6 @@ CREATE TABLE restaurantes (
     openhour TIME,
     closehour TIME,
     nota INT(3),
-    adress VARCHAR(50) NOT NULL,
     responsavel VARCHAR(50) NOT NULL
 );
 CREATE TABLE restauranteEndereco (
@@ -61,7 +60,7 @@ CREATE TABLE prato (
     nome VARCHAR(50) NOT NULL PRIMARY KEY,
     tipo VARCHAR(50) NOT NULL,
     obs TEXT,
-    acompanhamentos VARCHAR(50) NOT NULL,
+    acompanhamento VARCHAR(50) NOT NULL,
     descricao VARCHAR(50) NOT NULL,
     idrestaurante INT(3),
     FOREIGN KEY (idrestaurante) REFERENCES restaurantes(id)
@@ -123,13 +122,13 @@ INSERT INTO restaurantes (firstname, openhour, closehour, responsavel)
 VALUES ('atrantico','09:00', '18:00', 'marcos');
 
 --RestaurantesEndereço
-INSERT INTO restaurantesEndereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
+INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
 VALUES ('1','candeias','candeias','candeias','candeias','candeias');
-INSERT INTO usersEndereco(CPF, logradouro, complemento, bairro, cidade, estado)
+INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
 VALUES ('2','dom helder','dom helder','dom helder','dom helder','dom helder');
-INSERT INTO usersEndereco(CPF, logradouro, complemento, bairro, cidade, estado)
+INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
 VALUES ('3','boa viagem','boa viagem','boa viagem','boa viagem','boa viagem');
-INSERT INTO usersEndereco(CPF, logradouro, complemento, bairro, cidade, estado)
+INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
 VALUES ('4','sucupira','sucupira','sucupira','sucupira','sucupira');
 
 --prato
@@ -234,8 +233,6 @@ LEFT JOIN users as B
 
 -- right join é a mesm acoisa so que ao contrario
 
--- e para finalizar comandos de deletar, no exemplo abaixo podemos deletar toda uma tabela
-DELETE * FROM users
 --o exemplo abaixo deleta apenas as linhas que possui um parametro mandado
 DELETE FROM restaurantes WHERE restaurantes.id = '1'
 
