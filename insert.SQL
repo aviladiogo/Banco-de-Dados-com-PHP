@@ -75,6 +75,7 @@ CREATE TABLE avaliar (
     identregador INT(3),
     FOREIGN KEY (identregador) REFERENCES entregador(ID)
 );
+
 --Clientes:
 INSERT INTO users (CPF, firstname, lastname)
 VALUES ('99466','henry','luquinha');
@@ -111,6 +112,8 @@ VALUES ('dioguinho','holmes');
 INSERT INTO entregador(firstname, lastname)
 VALUES ('ronney','ruivo');
 
+--TRigger
+CREATE TRIGGER `Create` AFTER INSERT ON `restaurantes` FOR EACH ROW INSERT INTO restauranteendereco() VALUES ();
 --Restaurantes
 INSERT INTO restaurantes (firstname, openhour, closehour, responsavel)
 VALUES ('donaldKing','09:00', '18:00', 'ryan');
@@ -236,7 +239,7 @@ FROM restaurantes;
 
 GRANT SELECT ON users to henry;
 
-CREATE TRIGGER `Create` AFTER INSERT ON `restaurantes` FOR EACH ROW INSERT INTO restauranteendereco() VALUES ();
+
 --o exemplo abaixo deleta apenas as linhas que possui um parametro mandado
 DELETE FROM restaurantes WHERE restaurantes.id = '1'
 
