@@ -34,13 +34,13 @@ CREATE TABLE restaurantes (
     responsavel VARCHAR(50) NOT NULL
 );
 CREATE TABLE restauranteEndereco (
-    idrestaurante INT(3),
+    idrestaurante SERIAL PRIMARY KEY,
     FOREIGN KEY (idrestaurante) REFERENCES restaurantes(id),
-    logradouro VARCHAR(50) NOT NULL,
-    complemento VARCHAR(50) NOT NULL,
-    bairro VARCHAR(50) NOT NULL,
-    cidade VARCHAR(50) NOT NULL,
-    estado VARCHAR(50) NOT NULL
+    logradouro VARCHAR(50) ,
+    complemento VARCHAR(50),
+    bairro VARCHAR(50) ,
+    cidade VARCHAR(50) ,
+    estado VARCHAR(50) 
 );
 
 CREATE TABLE pedido (
@@ -121,15 +121,6 @@ VALUES ('habouaibs','09:00', '18:00', 'luquinhas');
 INSERT INTO restaurantes (firstname, openhour, closehour, responsavel)
 VALUES ('atrantico','09:00', '18:00', 'marcos');
 
---RestaurantesEndereço
-INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
-VALUES ('1','candeias','candeias','candeias','candeias','candeias');
-INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
-VALUES ('2','dom helder','dom helder','dom helder','dom helder','dom helder');
-INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
-VALUES ('3','boa viagem','boa viagem','boa viagem','boa viagem','boa viagem');
-INSERT INTO restauranteendereco(idrestaurante, logradouro, complemento, bairro, cidade, estado)
-VALUES ('4','sucupira','sucupira','sucupira','sucupira','sucupira');
 
 --prato
 SELECT ID FROM restaurantes WHERE firstname = 'donaldKing'
@@ -232,7 +223,20 @@ LEFT JOIN users as B
                 on a.firstname = b.firstname
 
 -- right join é a mesm acoisa so que ao contrario
+---- VIEW ele cria uma tabela separada para que possamos exibir tabelas escondendo informações, assim podemos criar um view do cardapio geral sem verem o id do restaurante
 
+CREATE VIEW pratos_viewuser AS
+SELECT nome, tipo, obs, acompanhamento, descricao
+FROM prato;
+
+---- VIEW ele cria uma tabela separada para que possamos exibir tabelas escondendo informações, assim podemos criar uma tabela para os usuarios verem o restaurante sem ver o seu ID e sem ver o nome do responsavel
+CREATE VIEW Restaurantes_USER AS
+SELECT firstname, openhour, closehour, nota
+FROM restaurantes;
+
+GRANT SELECT ON users to henry;
+
+CREATE TRIGGER `Create` AFTER INSERT ON `restaurantes` FOR EACH ROW INSERT INTO restauranteendereco() VALUES ();
 --o exemplo abaixo deleta apenas as linhas que possui um parametro mandado
 DELETE FROM restaurantes WHERE restaurantes.id = '1'
 
